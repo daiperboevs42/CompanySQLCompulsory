@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanySQLCompulsory.CompanySQLCompulsory.Data;
+using System;
 using System.Collections.Generic;
 
 namespace CompanySQLCompulsory
@@ -17,7 +18,10 @@ namespace CompanySQLCompulsory
             {
                 Console.WriteLine(element);
             };
+            var repository = new Repository();
+            repository.Testies();
             Console.ReadLine();
+
         }
     }
 }
