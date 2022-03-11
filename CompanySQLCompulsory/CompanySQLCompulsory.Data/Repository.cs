@@ -8,7 +8,8 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 {
     public class Repository
     {
-        //get actual connection string here
+        //Change here to local DB
+        //TODO: Change this so it works better/uses an actual DB
         private string connectionString = "Server=DESKTOP-ITEBOS2;Database=Company;Trusted_Connection=True;";
 
         public void Testies()

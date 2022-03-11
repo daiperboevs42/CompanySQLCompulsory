@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {}
+    "C:\\Users\\WøbbePC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Documents\\Repos\\SI Compulsory\\CompanySQLCompulsory\\CompanySQLCompulsory.csproj",
+      "projectUniqueName": "C:\\Users\\WøbbePC\\source\\repos\\CompanySQLCompulsory\\CompanySQLCompulsory\\CompanySQLCompulsory.csproj",
       "projectName": "CompanySQLCompulsory",
-      "projectPath": "C:\\Users\\Martin\\Documents\\Repos\\SI Compulsory\\CompanySQLCompulsory\\CompanySQLCompulsory.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Documents\\Repos\\SI Compulsory\\CompanySQLCompulsory\\obj\\",
+      "projectPath": "C:\\Users\\WøbbePC\\source\\repos\\CompanySQLCompulsory\\CompanySQLCompulsory\\CompanySQLCompulsory.csproj",
+      "packagesPath": "C:\\Users\\WøbbePC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WøbbePC\\source\\repos\\CompanySQLCompulsory\\CompanySQLCompulsory\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WøbbePC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -478,6 +478,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -489,6 +490,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "System.Data.SqlClient": {
             "target": "Package",
@@ -510,7 +512,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
