@@ -113,6 +113,9 @@ namespace CompanySQLCompulsory.GUI
                             Console.WriteLine("Error processing database request");
                         }
                         break;
+                    default:
+                        Console.WriteLine("Invalid Input, please try again");
+                        break;
                 }
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadLine();
@@ -121,7 +124,6 @@ namespace CompanySQLCompulsory.GUI
             }
             catch
             {
-
                 Console.WriteLine("Invalid Input, please try again");
             }
         }

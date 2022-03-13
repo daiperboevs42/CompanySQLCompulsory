@@ -14,9 +14,16 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void CreateDepartment(string DName, string MgrSSN)
         {
+            int conv = 0;
+            try { conv = Int32.Parse(MgrSSN); }
+            catch { Console.WriteLine("Your SSN is not a number"); }
+
             using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"CreateCommand {DName}, {MgrSSN}", cnn))
+            using (SqlCommand command = new SqlCommand($"CreateCommand", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
+                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = conv;
                 cnn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -34,9 +41,15 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void UpdateDepartmentName(string DNumber, string DName)
         {
+            int conv = 0;
+            try { conv = Int32.Parse(DNumber); }
+            catch { Console.WriteLine("Your Department Number is not a number"); }
             using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"UpdateDeptCommand {DNumber}, {DName}", cnn))
+            using (SqlCommand command = new SqlCommand($"UpdateDeptCommand", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
+                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = conv;
                 cnn.Open();
                 command.ExecuteNonQuery();
                 Console.WriteLine("Department name updated");
@@ -45,9 +58,18 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void UpdateDepartmentManager(string DNumber, string MgrSSN)
         {
+            int convDNumber = 0;
+            try { convDNumber = Int32.Parse(DNumber); }
+            catch { Console.WriteLine("Your Department Number is not a number"); }
+            int convSSN = 0;
+            try { convSSN = Int32.Parse(MgrSSN); }
+            catch { Console.WriteLine("Your SSN is not a number"); }
             using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"UpdateDeptManCommand {DNumber}, {MgrSSN}", cnn))
+            using (SqlCommand command = new SqlCommand($"UpdateDeptManCommand", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
+                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = convSSN;
                 cnn.Open();
                 command.ExecuteNonQuery();
                 Console.WriteLine("Department manager updated");
@@ -56,9 +78,14 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void DeleteDepartment(string DNumber)
         {
+            int convDNumber = 0;
+            try { convDNumber = Int32.Parse(DNumber); }
+            catch { Console.WriteLine("Your Department Number is not a number"); }
             using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"DeleteCommand {DNumber}", cnn))
+            using (SqlCommand command = new SqlCommand($"DeleteCommand", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
                 cnn.Open();
                 command.ExecuteNonQuery();
                 Console.WriteLine("Department deleted");
@@ -67,9 +94,14 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void GetDepartment(string DNumber)
         {
+            int convDNumber = 0;
+            try { convDNumber = Int32.Parse(DNumber); }
+            catch { Console.WriteLine("Your Department Number is not a number"); }
             using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"GetDepartment {DNumber}", cnn))
+            using (SqlCommand command = new SqlCommand($"GetDepartment", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
                 cnn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -89,6 +121,7 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
             using (var cnn = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand($"GetAllDepartments", cnn))
             {
+                command.CommandType = CommandType.StoredProcedure;
                 cnn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
