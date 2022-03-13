@@ -1,0 +1,40 @@
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.exe
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csprojAssemblyReference.cache
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.AssemblyInfoInputs.cache
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.AssemblyInfo.cs
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.deps.json
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.runtimeconfig.json
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.runtimeconfig.dev.json
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.pdb
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csproj.CopyComplete
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.dll
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.pdb
+C:\Users\Martin\Documents\Repos\SI Compulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.genruntimeconfig.cache
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.exe
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.deps.json
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.runtimeconfig.json
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.runtimeconfig.dev.json
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\CompanySQLCompulsory.pdb
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csprojAssemblyReference.cache
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.AssemblyInfoInputs.cache
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.AssemblyInfo.cs
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csproj.CoreCompileInputs.cache
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.csproj.CopyComplete
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.dll
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.pdb
+C:\Users\WøbbePC\source\repos\CompanySQLCompulsory\CompanySQLCompulsory\obj\Debug\netcoreapp3.1\CompanySQLCompulsory.genruntimeconfig.cache
