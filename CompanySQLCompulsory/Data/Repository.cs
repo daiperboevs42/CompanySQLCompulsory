@@ -14,169 +14,171 @@ namespace CompanySQLCompulsory.CompanySQLCompulsory.Data
 
         public void CreateDepartment(string DName, string MgrSSN)
         {
-            int conv = 0;
-            try { conv = Int32.Parse(MgrSSN); }
-            catch { Console.WriteLine("Your SSN is not a number"); }
-
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"CreateCommand", cnn))
+            int conv = ConvertStringToInt(MgrSSN);
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
-                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = conv;
-                cnn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_CreateDepartment", cnn))
                 {
-                    while (reader.Read())
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
+                    command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = conv;
+
+                    command.Parameters.Add("DNumber", SqlDbType.Int);
+                    command.Parameters["DNumber"].Direction = ParameterDirection.Output;
+                    //var message = (string)command.Parameters["DNumber"].Value;
+                    //command.Parameters.Add($"DNumber", SqlDbType.Int).Value = 0;
+                    //command.Parameters["DNumber"].Direction = ParameterDirection.Output;
+                    cnn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
+                        while (reader.Read())
                         {
-                            Console.WriteLine("Department created with Department Number:");
-                            Console.WriteLine(reader.GetValue(i));
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                Console.WriteLine("Department created with Department Number:");
+                                Console.WriteLine(reader.GetValue(i));
+                               //Console.WriteLine(message);
+                            }
                         }
                     }
                 }
+            }
+            catch(SqlException sqlEx)
+            {
+                Console.WriteLine(sqlEx);
             }
         }
 
         public void UpdateDepartmentName(string DNumber, string DName)
         {
-            int conv = 0;
-            try { conv = Int32.Parse(DNumber); }
-            catch { Console.WriteLine("Your Department Number is not a number"); }
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"UpdateDeptCommand", cnn))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
-                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = conv;
-                cnn.Open();
-                command.ExecuteNonQuery();
-                Console.WriteLine("Department name updated");
+                int conv = ConvertStringToInt(DNumber);
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_UpdateCreateDepartment", cnn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add($"DName", SqlDbType.VarChar).Value = DName;
+                    command.Parameters.Add($"DNumber", SqlDbType.Int).Value = conv;
+                    
+                    cnn.Open();
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Department name updated");
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine(sqlEx);
             }
         }
 
         public void UpdateDepartmentManager(string DNumber, string MgrSSN)
         {
-            int convDNumber = 0;
-            try { convDNumber = Int32.Parse(DNumber); }
-            catch { Console.WriteLine("Your Department Number is not a number"); }
-            int convSSN = 0;
-            try { convSSN = Int32.Parse(MgrSSN); }
-            catch { Console.WriteLine("Your SSN is not a number"); }
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"UpdateDeptManCommand", cnn))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
-                command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = convSSN;
-                cnn.Open();
-                command.ExecuteNonQuery();
-                Console.WriteLine("Department manager updated");
+                int convDNumber = ConvertStringToInt(DNumber);
+                int convSSN = ConvertStringToInt(MgrSSN);
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_UpdateDepartmentManager", cnn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add($"DNumber", SqlDbType.Int).Value = convDNumber;
+                    command.Parameters.Add($"MgrSSN", SqlDbType.Int).Value = convSSN;
+                    cnn.Open();
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Department manager updated");
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine(sqlEx);
             }
         }
 
         public void DeleteDepartment(string DNumber)
         {
-            int convDNumber = 0;
-            try { convDNumber = Int32.Parse(DNumber); }
-            catch { Console.WriteLine("Your Department Number is not a number"); }
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"DeleteCommand", cnn))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
-                cnn.Open();
-                command.ExecuteNonQuery();
-                Console.WriteLine("Department deleted");
+                int convDNumber = ConvertStringToInt(DNumber);
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_DeleteDepartment", cnn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add($"DNumber", SqlDbType.Int).Value = convDNumber;
+                    cnn.Open();
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Department deleted");
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine(sqlEx);
             }
         }
 
         public void GetDepartment(string DNumber)
         {
-            int convDNumber = 0;
-            try { convDNumber = Int32.Parse(DNumber); }
-            catch { Console.WriteLine("Your Department Number is not a number"); }
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"GetDepartment", cnn))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add($"DName", SqlDbType.Int).Value = convDNumber;
-                cnn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                int convDNumber = ConvertStringToInt(DNumber);
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_GetDepartment", cnn))
                 {
-                    while (reader.Read())
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add($"DNumber", SqlDbType.Int).Value = convDNumber;
+                    cnn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
+                        while (reader.Read())
                         {
-                            Console.WriteLine(reader.GetValue(i));
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                Console.WriteLine(reader.GetValue(i));
+                            }
                         }
                     }
                 }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine(sqlEx);
             }
         }
 
         public void GetAllDepartments()
         {
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"GetAllDepartments", cnn))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure;
-                cnn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (var cnn = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand($"usp_GetAllDepartment", cnn))
                 {
-                    while (reader.Read())
+                    command.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
+                        while (reader.Read())
                         {
-                            Console.WriteLine(reader.GetValue(i));
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                Console.WriteLine(reader.GetValue(i));
+                            }
                         }
                     }
                 }
             }
-        }
-
-        /*public void ReadSomething()
-        {
-            using (var cnn = new SqlConnection(connectionString))
-            using (var command = new SqlCommand("whatevertheydecideitscalled", cnn){ CommandType = CommandType.StoredProcedure }) 
+            catch (SqlException sqlEx)
             {
-                cnn.Open(); //does this go here?
-
-                using(SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            Console.WriteLine(reader.GetValue(i));
-                        }
-                        Console.WriteLine();
-                    }
-                }
-            };
-        }
-        
-         public void Testies()
-        {
-            using (var cnn = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand("SELECT * FROM Department", cnn))
-            {
-                cnn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            Console.WriteLine(reader.GetValue(i));
-                        }
-                        Console.WriteLine();
-                    }
-                }
+                Console.WriteLine(sqlEx);
             }
         }
-         
-         */
+
+        private int ConvertStringToInt(string toConvert)
+        {
+            int conv = 0;
+            try { conv = Int32.Parse(toConvert); }
+            catch { Console.WriteLine("Your input is not a number"); }
+            return conv;
+        }
     }
 }
